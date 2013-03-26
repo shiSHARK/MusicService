@@ -16,6 +16,10 @@ import android.view.Menu;
 
 public class MainActivity extends Activity {
 	private static final String TAG = MainActivity.class.getSimpleName();
+	
+	public static final String PREFS_NAME = "MusicServicePreferences";
+	public static final String PREFS_START_ON_BOOT = "StartOnBoot";
+	
 	private boolean ignoreFirst = false;
 	
 	private AudioManager mAudioManager;
