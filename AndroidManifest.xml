@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.wacom.musicservice.MainActivity"
+            android:name="eu.kometabg.musicservice.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,13 +26,13 @@
         </activity>
 
         <service
-            android:name="com.wacom.musicservice.MusicService"
+            android:name="eu.kometabg.musicservice.MusicService"
             android:enabled="true"
             android:exported="false" >
         </service>
 
         <receiver
-            android:name="com.wacom.musicservice.BootBroadcastReceiver"
+            android:name="eu.kometabg.musicservice.BootBroadcastReceiver"
             android:enabled="true"
             android:exported="true" >
             <intent-filter>
@@ -41,9 +41,9 @@
         </receiver>
 
         <activity
-            android:name="com.wacom.musicservice.SettingsActivity"
+            android:name="eu.kometabg.musicservice.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="com.wacom.musicservice.MainActivity" >
+            android:parentActivityName="eu.kometabg.musicservice.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.wacom.musicservice.MainActivity" />

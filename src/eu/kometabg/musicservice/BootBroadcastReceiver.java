@@ -1,4 +1,4 @@
-package com.wacom.musicservice;
+package eu.kometabg.musicservice;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
