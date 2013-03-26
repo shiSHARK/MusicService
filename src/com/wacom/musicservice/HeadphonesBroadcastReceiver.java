@@ -3,8 +3,9 @@ package com.wacom.musicservice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
-import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.KeyEvent;
 
@@ -21,7 +22,15 @@ public class HeadphonesBroadcastReceiver extends BroadcastReceiver {
 		if(ignoreFirstMessage){
 			ignoreFirstMessage = false;
 		}else {
-			if(intent.getAction().equals(Intent.ACTION_HEADSET_PLUG) && intent.getIntExtra("state", 5)==1){
+			SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+			boolean play = settings.getBoolean(SettingsActivity.KEY_PREF_PLAY_ON_HEADPHONES_CONNECTED, false);
+			boolean run = settings.getBoolean(SettingsActivity.KEY_PREF_RUN_ON_STARTUP, false);
+			
+			Log.d(TAG, "onReceive play " + play);
+			Log.d(TAG, "onReceive run " + run);
+			
+			
+			if(intent.getAction().equals(Intent.ACTION_HEADSET_PLUG) && intent.getIntExtra("state", 5)==1 && play){
 				// headset plug in event
 //				Intent playIntent = new Intent(Intent.ACTION_MEDIA_BUTTON);
 ////				KeyEvent hookEvent = new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_HEADSETHOOK);

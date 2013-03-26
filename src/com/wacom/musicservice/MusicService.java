@@ -2,11 +2,9 @@ package com.wacom.musicservice;
 
 import android.app.Service;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.media.AudioManager;
-import android.media.MediaActionSound;
 import android.os.IBinder;
 
 public class MusicService extends Service {

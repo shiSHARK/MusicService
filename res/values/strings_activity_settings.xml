@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="title_activity_settings">Settings</string>    
+    
+    <string name="pref_title_run_on_startup">Start service on startup</string>
+    <string name="pref_description_run_on_startup">When checked, the service starts when the device is turned on</string>
+    <string name="pref_title_play_on_headphones_conected">Play on headphones connection</string>
+    <string name="pref_description_play_on_headphones_conected">Send play command when connecting headphones</string>
+
+</resources>

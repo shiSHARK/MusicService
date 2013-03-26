@@ -1,0 +1,15 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="pref_run_on_startup"
+        android:summary="@string/pref_description_run_on_startup"
+        android:title="@string/pref_title_run_on_startup" />
+    
+        <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="pref_play_on_headphones_coneced"
+        android:summary="@string/pref_description_play_on_headphones_conected"
+        android:title="@string/pref_title_play_on_headphones_conected" />
+
+</PreferenceScreen>

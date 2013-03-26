@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 public class BootBroadcastReceiver extends BroadcastReceiver {
 	public BootBroadcastReceiver() {
@@ -11,10 +12,10 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		SharedPreferences settings = context.getSharedPreferences(MainActivity.PREFS_NAME, Context.MODE_PRIVATE);
-	       boolean startOnBoot = settings.getBoolean(MainActivity.PREFS_START_ON_BOOT, false);
-	       if(startOnBoot){
-	    	   context.startService(new Intent(context, MusicService.class));
-	       }
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+		boolean startOnBoot = settings.getBoolean(SettingsActivity.KEY_PREF_RUN_ON_STARTUP, false);
+		if(startOnBoot){
+			context.startService(new Intent(context, MusicService.class));
+		}
 	}
 }

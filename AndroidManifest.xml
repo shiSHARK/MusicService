@@ -32,19 +32,22 @@
         </service>
 
         <receiver
-            android:name="com.wacom.musicservice.HeadphonesBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.media.SCO_AUDIO_STATE_CHANGED" />
-                <action android:name="android.media.ACTION_SCO_AUDIO_STATE_UPDATED" />
-            </intent-filter>
-        </receiver>
-        <receiver
             android:name="com.wacom.musicservice.BootBroadcastReceiver"
             android:enabled="true"
             android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
         </receiver>
+
+        <activity
+            android:name="com.wacom.musicservice.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="com.wacom.musicservice.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wacom.musicservice.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
