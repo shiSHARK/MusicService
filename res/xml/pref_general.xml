@@ -11,5 +11,11 @@
         android:key="pref_play_on_headphones_coneced"
         android:summary="@string/pref_description_play_on_headphones_conected"
         android:title="@string/pref_title_play_on_headphones_conected" />
+        
+        <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="pref_start_google_play_music"
+        android:summary="@string/pref_description_start_google_play_music"
+        android:title="@string/pref_title_start_google_play_music" />
 
 </PreferenceScreen>
