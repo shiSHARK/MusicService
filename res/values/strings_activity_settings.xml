@@ -7,6 +7,6 @@
     <string name="pref_title_play_on_headphones_conected">Play on headphones connection</string>
     <string name="pref_description_play_on_headphones_conected">Send play command when connecting headphones</string>
     <string name="pref_title_start_google_play_music">Start Google Music</string>
-    <string name="pref_description_start_google_play_music">Special feature for Google Msic application</string>
+    <string name="pref_description_start_google_play_music">Special feature for Google Music application</string>
 
 </resources>
