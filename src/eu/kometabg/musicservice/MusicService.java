@@ -5,9 +5,11 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.media.AudioManager;
+import android.os.Handler;
 import android.os.IBinder;
 
 public class MusicService extends Service {
+	private static final int TIMEOUT = 3000;
 	
 	HeadphonesBroadcastReceiver broadcastReceiver = new HeadphonesBroadcastReceiver();
 	ComponentName mRemoteControlResponder;
@@ -18,14 +20,24 @@ public class MusicService extends Service {
 	
 	@Override
 	public void onCreate() {
-		// TODO Auto-generated method stub
 		super.onCreate();
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Intent.ACTION_HEADSET_PLUG);
 //		filter.addAction(Intent.ACTION_MEDIA_BUTTON);
+		//When broadcast is registered, recieves Headset Plug intent
 		broadcastReceiver.setIgnoreFirstMessage(true);
 		registerReceiver(broadcastReceiver, filter);
 		
+		//This fixes bug. When android boots first time when 
+		//headphones are connected nothing happens
+		Handler handler = new Handler();
+		handler.postDelayed(new Runnable() { 
+			
+			@Override
+			public void run() {
+				broadcastReceiver.setIgnoreFirstMessage(false);
+			}
+		}, TIMEOUT);
 //		mAudioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 //		mRemoteControlResponder = new ComponentName(getPackageName(),
 //                HeadphonesBroadcastReceiver.class.getName());
