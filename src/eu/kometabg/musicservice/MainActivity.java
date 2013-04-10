@@ -1,7 +1,5 @@
 package eu.kometabg.musicservice;
 
-import com.wacom.musicservice.R;
-
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;

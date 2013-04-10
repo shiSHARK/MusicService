@@ -1,7 +1,5 @@
 package eu.kometabg.musicservice;
 
-import com.wacom.musicservice.R;
-
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
